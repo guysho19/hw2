@@ -5,6 +5,7 @@ public class Main {
     }
 
     private static void testPartA() {
+        //hello world
         System.out.println("--------------- Tests for part A ---------------");
         Clock c1 = new Clock(10, 30);
         Object o1 = c1;
