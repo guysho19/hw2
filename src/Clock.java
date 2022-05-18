@@ -34,4 +34,9 @@ public class Clock {
         return str_hour+":"+str_minute;
     }
 
+    @Override
+    public int hashCode() {
+        return 60*this.minute + 3600*this.hour;
+    }
+
 }

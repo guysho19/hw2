@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class AccurateClock extends Clock{
     private int seconds;
 
@@ -32,5 +34,10 @@ public class AccurateClock extends Clock{
         str_seconds=Integer.toString(this.seconds);
         if (this.seconds < 10){ str_seconds ="0"+ str_seconds;}
         return str_hour+":"+str_minute+":"+str_seconds;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.seconds + 60*this.minute + 3600*this.hour;
     }
 }
