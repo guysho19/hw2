@@ -20,7 +20,11 @@ public class Clock {
         if (!(other instanceof Clock)){
             return false;
         }
+        if (other instanceof AccurateClock){
+            return false;
+        }
         Clock otherClock = (Clock) other;
+        //if (otherClock.ge)
         return this.hour == otherClock.hour && this.minute == otherClock.minute;
     }
 
