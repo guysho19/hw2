@@ -3,8 +3,16 @@ public class Clock {
     protected int minute;
 
     public Clock(int hour, int minute) {
-        this.hour = hour;
-        this.minute = minute;
+        if (hour<=23 && hour>=0) {
+            this.hour = hour;
+        }else{
+            this.hour = 0;
+        }
+        if (minute>=0 && minute<=59) {
+            this.minute = minute;
+        }else{
+            this.minute=0;
+        }
     }
 
     public int getHour() { return hour; }

@@ -13,7 +13,11 @@ public class AccurateClock extends Clock{
     }
 
     public void setSeconds(int seconds) {
-        this.seconds = seconds;
+        if (seconds>=0 && seconds<=59) {
+            this.seconds = seconds;
+        }else{
+            this.seconds=0;
+        }
     }
 
     @Override
