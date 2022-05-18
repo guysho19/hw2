@@ -14,6 +14,15 @@ public class Clock {
         Clock otherClock = (Clock) other;
         return this.hour == otherClock.hour && this.minute == otherClock.minute;
     }
+    @Override
+    public String toString() {
+        String str_hour, str_minute;
+        str_hour=Integer.toString(this.hour);
+        if (this.hour < 10){ str_hour ="0"+ str_hour;}
+        str_minute=Integer.toString(this.minute);
+        if (this.minute < 10){ str_minute ="0"+ str_minute;}
+        return str_hour+":"+str_minute;
+    }
     public int getHour() { return hour; }
 
     public void setHour(int hour) { this.hour = hour; }
