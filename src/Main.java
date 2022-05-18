@@ -1,12 +1,13 @@
 public class Main {
     public static void main(String[] args) {
         testPartA();
-        testPartB();
+        //testPartB();
     }
 
     private static void testPartA() {
-        //hello world
         System.out.println("--------------- Tests for part A ---------------");
+        Clock c= new Clock (1,30);
+        System.out.println(c.toString());
         Clock c1 = new Clock(10, 30);
         Object o1 = c1;
         AccurateClock ac1 = new AccurateClock(10, 30, 20);
@@ -39,7 +40,6 @@ public class Main {
         System.out.println("o2: " + o2);
         System.out.println("new: " + new AccurateClock(5, 6, 3));
     }
-
     private static void testPartB() {
         System.out.println("--------------- Tests for part B ---------------");
 
