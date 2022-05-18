@@ -39,6 +39,6 @@ public class AccurateClock extends Clock{
 
     @Override
     public int hashCode() {
-        return this.seconds + 60*this.minute + 3600*this.hour;
+        return 24*3600+this.seconds + 60*this.minute + 3600*this.hour;
     }
 }
