@@ -21,4 +21,16 @@ public class AccurateClock extends Clock{
     public void setSeconds(int seconds) {
         this.seconds = seconds;
     }
+
+    @Override
+    public String toString() {
+        String str_hour, str_minute ,str_seconds;
+        str_hour=Integer.toString(this.hour);
+        if (this.hour < 10){ str_hour ="0"+ str_hour;}
+        str_minute=Integer.toString(this.minute);
+        if (this.minute < 10){ str_minute ="0"+ str_minute;}
+        str_seconds=Integer.toString(this.seconds);
+        if (this.seconds < 10){ str_seconds ="0"+ str_seconds;}
+        return str_hour+":"+str_minute+":"+str_seconds;
+    }
 }

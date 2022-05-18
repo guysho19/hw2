@@ -6,6 +6,15 @@ public class Clock {
         this.hour = hour;
         this.minute = minute;
     }
+
+    public int getHour() { return hour; }
+
+    public void setHour(int hour) { this.hour = hour; }
+
+    public int getMinute() { return minute; }
+
+    public void setMinute(int minute) { this.minute = minute; }
+
     @Override
     public boolean equals(Object other) {
         if (!(other instanceof Clock)){
@@ -14,13 +23,6 @@ public class Clock {
         Clock otherClock = (Clock) other;
         return this.hour == otherClock.hour && this.minute == otherClock.minute;
     }
-    public int getHour() { return hour; }
-
-    public void setHour(int hour) { this.hour = hour; }
-
-    public int getMinute() { return minute; }
-
-    public void setMinute(int minute) { this.minute = minute; }
 
     @Override
     public String toString() {
