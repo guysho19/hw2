@@ -2,8 +2,8 @@ public class RoundedExpression extends Expression{
     private double roundedValue;
 
     public RoundedExpression(Expression expression,int digitsAfterDecimalPoint) {
-        this.roundedValue=expression.evaluate();
-       // this.roundedValue = Math.round((double)expression.evaluate());
+        this.roundedValue = expression.evaluate();
+        //this.roundedValue = Math.round(expression.evaluate());
     }
     @Override
     public String toString() {

@@ -8,7 +8,7 @@ public class Division extends Expression {
     }
     @Override
     public String toString() {
-        return "("+expression1.toString()+"/"+expression2.toString()+")";
+        return "("+expression1.toString()+" / "+expression2.toString()+")";
     }
 
     @Override

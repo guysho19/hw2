@@ -1,5 +1,5 @@
 public class IntegerLiteral extends Expression{
-    private final int value;
+    private int value;
 
     public IntegerLiteral(int value) {
         this.value = value;
