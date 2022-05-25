@@ -1,30 +1,18 @@
 public class Division extends Expression {
-    private int valueInt;
-    private double valueDouble;
+    private Expression expression1;
+    private Expression expression2;
 
-    public Division(IntegerLiteral valueInt1, IntegerLiteral valueInt2) {
-        this.valueInt = (int)valueInt1.evaluate()/(int)valueInt2.evaluate();
-
+    public Division(Expression expression1, Expression expression2) {
+        this.expression1 = expression1;
+        this.expression2 = expression2;
     }
-    public Division(IntegerLiteral valueInt, DoubleLiteral valueDouble) {
-        this.valueDouble = valueInt.evaluate()/valueDouble.evaluate();
-
-    }
-    public Division(DoubleLiteral valueDouble,IntegerLiteral valueInt) {
-        this.valueDouble = valueDouble.evaluate()/valueInt.evaluate();
-
-    }
-    public Division(DoubleLiteral valueDouble1, DoubleLiteral valueDouble2) {
-        this.valueDouble = valueDouble1.evaluate()/valueDouble2.evaluate();
-    }
-
     @Override
     public String toString() {
-
+        return "("+expression1.toString()+"/"+expression2.toString()+")";
     }
 
     @Override
     public double evaluate(){
-    if
+        return expression1.evaluate()/expression2.evaluate();
     }
 }

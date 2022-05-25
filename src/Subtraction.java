@@ -1,22 +1,18 @@
-public class Subtraction {
-    private  int int_value;
-    private double double_value;
+public class Subtraction extends Expression {
+    private Expression expression1;
+    private Expression expression2;
 
-    public Subtraction(IntegerLiteral int1, IntegerLiteral int2) {
-        this.int_value = (int) (int1.evaluate()- int2.evaluate());
+    public Subtraction(Expression expression1, Expression expression2) {
+        this.expression1 = expression1;
+        this.expression2 = expression2;
+    }
+    @Override
+    public String toString() {
+        return "("+expression1.toString()+"-"+expression2.toString()+")";
     }
 
-    public Subtraction(IntegerLiteral int1, DoubleLiteral double2) {
-        this.double_value = (int1.evaluate()- double2.evaluate());
+    @Override
+    public double evaluate(){
+        return expression1.evaluate()-expression2.evaluate();
     }
-
-    public Subtraction(DoubleLiteral double1, IntegerLiteral int2) {
-        this.double_value = (double1.evaluate()- int2.evaluate());
-    }
-
-    public Subtraction(DoubleLiteral double1, DoubleLiteral double2) {
-        this.double_value = (double1.evaluate()- double2.evaluate());
-    }
-
-
 }
