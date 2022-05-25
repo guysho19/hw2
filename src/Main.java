@@ -47,6 +47,7 @@ public class Main {
         printExpression(intExp1, "intExp1");
 
         Expression doubleExp1 = new DoubleLiteral(7.5);
+
         printExpression(doubleExp1, "doubleExp1");
 
         Expression intExp2 = new IntegerLiteral(-5);
@@ -119,6 +120,7 @@ public class Main {
 
         Expression roundExp5 = new RoundedExpression(multiAdd2, 1);
         printExpression(roundExp5, "roundExp5");
+
 //
 //        Expression massiveExp = new Multiplication(
 //                                        divisionExp,

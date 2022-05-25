@@ -1,17 +1,19 @@
 public class RoundedExpression extends Expression{
-    private double roundedValue;
+    private Expression expression;
+    private int digitsAfterDecimalPoint;
 
     public RoundedExpression(Expression expression,int digitsAfterDecimalPoint) {
-        this.roundedValue = expression.evaluate();
+        this.expression = expression;
+        this.digitsAfterDecimalPoint=digitsAfterDecimalPoint;
         //this.roundedValue = Math.round(expression.evaluate());
     }
     @Override
     public String toString() {
-        return "("+roundedValue+")";
+        return expression.toString();
     }
 
     @Override
     public double evaluate(){
-        return roundedValue;
+        return (Math.round(expression.evaluate()*Math.pow(10,digitsAfterDecimalPoint)) / Math.pow(10,digitsAfterDecimalPoint));
     }
 }
