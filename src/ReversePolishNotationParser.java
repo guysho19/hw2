@@ -1,20 +1,18 @@
-public class PolishNotationParser extends ExpressionParser{
-private final static int indexReduce = 1;
-private final static int lengthIsZero = 0;
+public class ReversePolishNotationParser extends ExpressionParser{
 
     @Override
     public Expression parse(String expressionStr){
         String[] expressionDisassemble=expressionStr.split(" ");
         Stack<Expression> expressionParts=new Stack<Expression>();
-        int length = expressionDisassemble.length-indexReduce;
-        for (;length>=lengthIsZero; length--){
-            int value=isOperator(expressionDisassemble[length]);
+        int length = expressionDisassemble.length;
+        for (int i=0; i<length; i++){
+            int value=isOperator(expressionDisassemble[i]);
             if (value==operandSign) {
-                expressionParts.push(strToExpression(expressionDisassemble[length]));
+                expressionParts.push(strToExpression(expressionDisassemble[i]));
             }
             else if (value >=additionSign && value<=multiplicationSign){
-                Expression exp1 = expressionParts.pop();
                 Expression exp2 = expressionParts.pop();
+                Expression exp1 = expressionParts.pop();
                 switch(value){
                     case additionSign:
                         expressionParts.push(new Addition(exp1,exp2));
