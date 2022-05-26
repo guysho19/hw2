@@ -1,45 +1,45 @@
 public class Main {
     public static void main(String[] args) {
-        //testPartA();
+        testPartA();
         testPartB();
     }
 
-//    private static void testPartA() {
-//        //hello world
-//
-//        System.out.println("--------------- Tests for part A ---------------");
-//        Clock c1 = new Clock(10, 30);
-//        Object o1 = c1;
-//        AccurateClock ac1 = new AccurateClock(10, 30, 20);
-//        Clock c2 = ac1;
-//        Object o2 = c2;
-//        System.out.println("c1 with o1: " + c1.equals(o1));
-//        System.out.println("o1 with c1: " + o1.equals(c1));
-//
-//        System.out.println("c1 with ac1: " + c1.equals(ac1));
-//        System.out.println("ac1 with c1: " + ac1.equals(c1));
-//        System.out.println("c1 with c2: " + c1.equals(c2));
-//        System.out.println("c2 with c1: " + c2.equals(c1));
-//        System.out.println("c1 with o2: " + c1.equals(o2));
-//        System.out.println("o2 with c1: " + o2.equals(c1));
-//
-//        System.out.println("ac1 with c2: " + ac1.equals(c2));
-//        System.out.println("c2 with ac1: " + c2.equals(ac1));
-//        System.out.println("ac1 with o2: " + ac1.equals(o2));
-//        System.out.println("o2 with ac1: " + o2.equals(ac1));
-//        System.out.println("c2 with o2: " + c2.equals(o2));
-//        System.out.println("o2 with c2: " + o2.equals(c2));
-//        System.out.println("c1 with null: " + c1.equals(null));
-//        System.out.println("o1 with null: " + o1.equals(null));
-//        System.out.println("ac1 with null: " + ac1.equals(null));
-//
-//        System.out.println("c1: " + c1);
-//        System.out.println("o1: " + o1);
-//        System.out.println("ac1: " + ac1);
-//        System.out.println("c2: " + c2);
-//        System.out.println("o2: " + o2);
-//        System.out.println("new: " + new AccurateClock(5, 6, 3));
-//    }
+    private static void testPartA() {
+        //hello world
+
+        System.out.println("--------------- Tests for part A ---------------");
+        Clock c1 = new Clock(10, 30);
+        Object o1 = c1;
+        AccurateClock ac1 = new AccurateClock(10, 30, 20);
+        Clock c2 = ac1;
+        Object o2 = c2;
+        System.out.println("c1 with o1: " + c1.equals(o1));
+        System.out.println("o1 with c1: " + o1.equals(c1));
+
+        System.out.println("c1 with ac1: " + c1.equals(ac1));
+        System.out.println("ac1 with c1: " + ac1.equals(c1));
+        System.out.println("c1 with c2: " + c1.equals(c2));
+        System.out.println("c2 with c1: " + c2.equals(c1));
+        System.out.println("c1 with o2: " + c1.equals(o2));
+        System.out.println("o2 with c1: " + o2.equals(c1));
+
+        System.out.println("ac1 with c2: " + ac1.equals(c2));
+        System.out.println("c2 with ac1: " + c2.equals(ac1));
+        System.out.println("ac1 with o2: " + ac1.equals(o2));
+        System.out.println("o2 with ac1: " + o2.equals(ac1));
+        System.out.println("c2 with o2: " + c2.equals(o2));
+        System.out.println("o2 with c2: " + o2.equals(c2));
+        System.out.println("c1 with null: " + c1.equals(null));
+        System.out.println("o1 with null: " + o1.equals(null));
+        System.out.println("ac1 with null: " + ac1.equals(null));
+
+        System.out.println("c1: " + c1);
+        System.out.println("o1: " + o1);
+        System.out.println("ac1: " + ac1);
+        System.out.println("c2: " + c2);
+        System.out.println("o2: " + o2);
+        System.out.println("new: " + new AccurateClock(5, 6, 3));
+    }
 
     private static void testPartB() {
         System.out.println("--------------- Tests for part B ---------------");
@@ -140,26 +140,26 @@ public class Main {
                                                                                 new Subtraction(divisionExp, exp3)))))));
         printExpression(massiveExp, "massiveExp");
 
-//        ExpressionParser polishParser = new PolishNotationParser();
+        ExpressionParser polishParser = new PolishNotationParser();
 //        ExpressionParser reversePolishParser = new ReversePolishNotationParser();
 //
-//        Expression parsed1 = polishParser.parse("1.5");
-//        printExpression(parsed1, "parsed1", true);
-//
+        Expression parsed1 = polishParser.parse("1.5");
+        printExpression(parsed1, "parsed1", true);
+
 //        Expression parsed2 = reversePolishParser.parse("1");
 //        printExpression(parsed2, "parsed2", true);
 //
-//        Expression parsed3 = polishParser.parse("1.0");
-//        printExpression(parsed3, "parsed3", true);
-//
-//        Expression parsed4 = polishParser.parse("+ 1 2");
-//        printExpression(parsed4, "parsed4", true);
-//
+        Expression parsed3 = polishParser.parse("1.0");
+        printExpression(parsed3, "parsed3", true);
+
+        Expression parsed4 = polishParser.parse("+ 1 2");
+        printExpression(parsed4, "parsed4", true);
+
 //        Expression parsed5 = reversePolishParser.parse("1 2 +");
 //        printExpression(parsed5, "parsed5", true);
-//
-//        Expression parsed6 = polishParser.parse("* + 1.0 2 + 3.0 4");
-//        printExpression(parsed6, "parsed6", true);
+
+        Expression parsed6 = polishParser.parse("* + 1.0 2 + 3.0 4");
+        printExpression(parsed6, "parsed6", true);
 //
 //        Expression parsed7 = reversePolishParser.parse("1 2.0 + 3 4.0 + *");
 //        printExpression(parsed7, "parsed7", true);
@@ -167,11 +167,11 @@ public class Main {
 //        Expression parsed8 = reversePolishParser.parse("1 2.0 -u + 3 4.0 + * -u");
 //        printExpression(parsed8, "parsed8", true);
 //
-//        Expression parsed9 = polishParser.parse("-u -u -u * + 1.0 2 + 3.0 -u 4");
-//        printExpression(parsed9, "parsed9", true);
-//
-//        Addition exp4 = new Addition(exp3, parsed6);
-//        printExpression(exp4, "exp4");
+        Expression parsed9 = polishParser.parse("-u -u -u * + 1.0 2 + 3.0 -u 4");
+        printExpression(parsed9, "parsed9", true);
+
+        Addition exp4 = new Addition(exp3, parsed6);
+        printExpression(exp4, "exp4");
     }
 
     private static void printExpression(Expression exp, String name, boolean withClass) {

@@ -1,8 +1,7 @@
 import java.util.Stack;
 
 public class PolishNotationParser extends ExpressionParser{
-    public PolishNotationParser() {
-    }
+
     public int isOperator(String str){
         if (str.equals("+")){
             return 1;
@@ -31,18 +30,43 @@ public class PolishNotationParser extends ExpressionParser{
         String[] expressionDisassemble=expressionStr.split(" ");
         Stack<Expression> expressionParts=new Stack<Expression>();
         int length = expressionDisassemble.length-1;
-        while (length>0){
-            switch (isOperator(expressionDisassemble[length])){
-                case 0:
-                    expressionParts.push(strToExpression(expressionDisassemble[length]));
-                    length--;
-                    break;
-                case 1:
-
-
+        while (length>=0){
+            int value=isOperator(expressionDisassemble[length]);
+            if (value==0) {
+                expressionParts.push(strToExpression(expressionDisassemble[length]));
+                length--;
             }
-
+            else if (value >=1 && value<=4){
+                Expression exp1 = expressionParts.pop();
+                Expression exp2 = expressionParts.pop();
+                switch(value){
+                    case 1:
+                        expressionParts.push(new Addition(exp1,exp2));
+                        length--;
+                        break;
+                    case 2:
+                        expressionParts.push(new Subtraction(exp1,exp2));
+                        length--;
+                        break;
+                    case 3:
+                        expressionParts.push(new Division(exp1,exp2));
+                        length--;
+                        break;
+                    case 4:
+                        expressionParts.push(new Multiplication(exp1,exp2));
+                        length--;
+                        break;
+                }
+            }
+            if (value ==5) {
+                Expression exp = expressionParts.pop();
+                expressionParts.push(new UnaryMinus(exp));
+                length--;
+            }
         }
+        Expression finalExpression = expressionParts.peek();
+        return finalExpression;
+
 //        Stack<Expression> operandStack=new Stack<Expression>();
 //        str.split("(\\+)|(\\-)|(\\*)|(\\/)");
 //        String[] expressionDisassemble=expressionStr.split(" ");
