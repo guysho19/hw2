@@ -6,7 +6,7 @@ public class AccurateClock extends Clock{
     public AccurateClock(int hour, int minute, int seconds) {
         super(hour, minute);
         if (seconds>=0 && seconds<=59) {
-        this.seconds = seconds;
+            this.seconds = seconds;
         }else{
             this.seconds=0;
         }

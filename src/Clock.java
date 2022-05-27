@@ -46,5 +46,4 @@ public class Clock {
     public int hashCode() {
         return 60*this.minute + 3600*this.hour;
     }
-
 }
