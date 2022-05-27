@@ -5,7 +5,6 @@ public class RoundedExpression extends Expression{
     public RoundedExpression(Expression expression,int digitsAfterDecimalPoint) {
         this.expression = expression;
         this.digitsAfterDecimalPoint=digitsAfterDecimalPoint;
-        //this.roundedValue = Math.round(expression.evaluate());
     }
     @Override
     public String toString() {

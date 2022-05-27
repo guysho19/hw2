@@ -1,6 +1,15 @@
 public class PolishNotationParser extends ExpressionParser{
 private final static int indexReduce = 1;
 private final static int lengthIsZero = 0;
+    /**
+     * this java class parses a string of polish notation to an Expression
+     * first it dissassemble the string by spliting it by " " into an array
+     * later it pushes operands to the stack until there is an operator
+     * and then it creates new expression with the operator
+     * it continues until it gets to the array in the "0" place
+     * @param expressionStr
+     * returns regular Expression of the polish notation - str
+     */
 
     @Override
     public Expression parse(String expressionStr){

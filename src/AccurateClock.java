@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class AccurateClock extends Clock{
     private int seconds;
 

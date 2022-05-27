@@ -1,5 +1,13 @@
 public class ReversePolishNotationParser extends ExpressionParser{
-
+    /**
+     * this java class parses a string of reverse polish notation to an Expression
+     * first it dissassemble the string by spliting it by " " into an array
+     * later it pushes operands to the stack until there is an operator
+     * and then it creates new expression with the operator
+     * it continues until it gets to the array in the "length" place
+     * @param expressionStr
+     * returns regular Expression of the reverse polish notation - str
+     */
     @Override
     public Expression parse(String expressionStr){
         String[] expressionDisassemble=expressionStr.split(" ");

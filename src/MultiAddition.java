@@ -3,10 +3,12 @@ public class MultiAddition extends Expression{
 
     public MultiAddition(Expression ... expression) {
         int index=0;
-        expressions=new Expression[expression.length];
-        for (Expression exp : expression){
-            this.expressions[index]=exp;
-            index++;
+        if (expression.length>=2) {
+            expressions = new Expression[expression.length];
+            for (Expression exp : expression) {
+                this.expressions[index] = exp;
+                index++;
+            }
         }
     }
 

@@ -8,8 +8,18 @@ public abstract class ExpressionParser {
     public static final int unaryMinusSign = 5;
     public static final int itsNotADouble = 1;
 
+    /**
+     *
+     * @param str
+     * returns the parsed expression
+     */
     public abstract Expression parse(String str);
 
+    /**
+     * gets a string and returns a number that the string operator represent
+     * @param str
+     * returns a number that the string operator represent
+     */
     protected int isOperator(String str){
         if (str.equals("+")){
             return additionSign;
@@ -25,6 +35,12 @@ public abstract class ExpressionParser {
         return operandSign;
     }
 
+    /**
+     *checks if the str represent int or double
+     * and hence returns IntegerLiteral of the str or DoubleLiteral of the str
+     * @param str
+     * returns expression of the given string
+     */
     protected Expression strToExpression (String str){
         String[] checkForDouble= str.split("\\.");
         if (checkForDouble.length == itsNotADouble) {
